@@ -1,0 +1,84 @@
+.Register-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Register-container .Body h2{
+    font-size: 40px;
+}
+.Register-container .Body hr{
+    width: 140px;
+    height: 5px;
+    background-color: #2D6B46;
+    border: none;
+    margin-bottom: 10px;
+}
+.Register-container .Body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    background-color: #EDF1ED;
+}
+.Register-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+}
+.Register-container .inp-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width:300px;
+    width: 100%;
+    height: 350px;
+    gap: 10px;
+    background-color: white;
+    border: #47B071 2px solid;
+    border-radius: 5px;
+}
+.Register-container label {
+    text-indent: 40px;
+    height: 12px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+}
+.Register-container input[type="email"],
+.Register-container input[type="password"],
+.Register-container input[type="text"]{
+    width: 220px;
+    height: 30px;
+    border: black 1px solid;
+    border-radius: 5px;
+    text-indent: 5px;
+    margin-bottom: 8px;
+}
+.Register-container form p{
+    text-align: left;
+    text-indent: 2px;
+    width: 75%;
+}
+.Register-container form button{
+    width: 120px;
+    height: 35px;
+    background-color: #8FD6AB;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.Register-container form button:active{
+    background-color: #47B071;
+}
