@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Register.css';
+import axios from 'axios';
 
 function Register() {
   const [password, setPassword] = useState('');
@@ -20,9 +21,26 @@ function Register() {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault(); 
     if (password !== confirmPassword) {
-      e.preventDefault(); 
       setError('Passwords do not match');
+    }
+    else {
+      axios.post('http://localhost:5000/api/register', {
+        username: e.target[0].value,
+        email   : e.target[1].value, 
+        password: e.target[2].value
+      })
+      .then((res) => {
+        if (res.data.error) {
+          setError(res.data.error);
+        } else {
+          window.location.href = '/login';
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     }
   };
 
@@ -34,7 +52,7 @@ function Register() {
       <div className="Body">
         <h2>REGISTER</h2>
         <hr />
-        <form action='/login' onSubmit={handleSubmit}>
+        <form action='/register' onSubmit={handleSubmit} method='post'>
           <div className="inp-container">
             <label htmlFor="Name">Name</label>
             <input type="text" placeholder='Enter Name' required/>

@@ -10,7 +10,7 @@ function Login() {
         <div className="Body">
             <h2>LOGIN</h2>
             <hr />
-            <form action='/home'>
+            <form action='/login' method='post'>
                 <div className="inp-container">
                     <label htmlFor="Email">Email</label>
                     <input type="email" placeholder='Enter email' required/>
