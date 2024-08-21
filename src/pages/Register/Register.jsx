@@ -5,6 +5,8 @@ function Register() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
   const handlePassword = (e) => {
     setPassword(e.target.value);
@@ -26,6 +28,14 @@ function Register() {
     }
   };
 
+  const handleName = (e) => {
+    setName(e.target.value);
+  }
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  }
+
   return (
     <div className='Register-container'>
       <div className="Header">
@@ -37,10 +47,18 @@ function Register() {
         <form action='/login' onSubmit={handleSubmit}>
           <div className="inp-container">
             <label htmlFor="Name">Name</label>
-            <input type="text" placeholder='Enter Name' required/>
+            <input 
+            type="text" 
+            placeholder='Enter Name' 
+            value={name} 
+            onChange={handleName} required/>
 
             <label htmlFor="Email">Email</label>
-            <input type="email" placeholder='Enter email' required/>
+            <input 
+            type="email" 
+            placeholder='Enter email' 
+            value={email} 
+            onChange={handleEmail} required/>
 
             <label htmlFor="Password">Password</label>
             <input 
@@ -48,8 +66,7 @@ function Register() {
               placeholder='Enter password' 
               required
               value={password}
-              onChange={handlePassword}
-            />
+              onChange={handlePassword}/>
 
             <label htmlFor="Password_confirm">Confirm Password</label>
             <input 
@@ -57,8 +74,7 @@ function Register() {
               placeholder='Enter password' 
               required
               value={confirmPassword}
-              onChange={handleConfirmPassword}
-            />
+              onChange={handleConfirmPassword}/>
 
             {error && <p className="error">{error}</p>}
           </div>
